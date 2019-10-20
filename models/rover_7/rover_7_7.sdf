@@ -19,12 +19,12 @@
         <pose>0.1 0 0.4 0 0 0</pose>
       </inertial>
       <visual name="visual">
-          <pose>2 0 1 0 0 1.570796</pose>
+        <pose>2 0 1 0 0 1.570796</pose>
         <geometry>
-            <mesh>
-                <scale>1 1 1</scale>
-                <uri>model://rover/meshes/base_link.STL</uri>
-            </mesh>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://rover/meshes/base_link.STL</uri>
+          </mesh>
         </geometry>
         <material>
           <script>
@@ -273,7 +273,7 @@
           <mesh>
             <scale>0.5 0.5 0.5</scale>
             <uri>model://rover/meshes/polaris.dae</uri>
-<!--            <uri>model://rover/meshes/base_link.STL</uri>-->
+            <!--            <uri>model://rover/meshes/base_link.STL</uri>-->
             <submesh>
               <name>Bed</name>
               <center>true</center>
@@ -293,7 +293,7 @@
         <geometry>
           <mesh>
             <uri>model://rover/meshes/polaris.dae</uri>
-<!--            <uri>model://rover/meshes/base_link.STL</uri>-->
+            <!--            <uri>model://rover/meshes/base_link.STL</uri>-->
             <submesh>
               <name>Tail_Gate</name>
               <center>true</center>
@@ -308,7 +308,7 @@
           </script>
         </material>
       </visual>
-      <visual name="front_left_brake_visual">
+     <!-- <visual name="front_left_brake_visual">
         <pose>1.12 -0.57488 0.35516 3.1415 0 1.5707</pose>
         <geometry>
           <mesh>
@@ -345,7 +345,7 @@
             <name>PolarisXP900/Diffuse</name>
           </script>
         </material>
-      </visual>
+      </visual>-->
       <visual name="central_hump1">
         <pose>0.55 -0.1 0.4 0 0 0</pose>
         <geometry>
@@ -504,7 +504,7 @@
           </contact>
         </surface>
       </collision>
-   <!--   <visual name="tire_visual">
+      <!--<visual name="tire_visual">
         <pose>0 0 0 3.14159 1.570796 0</pose>
         <geometry>
           <mesh>
@@ -833,24 +833,24 @@
         <use_parent_model_frame>true</use_parent_model_frame>
       </axis>
     </joint>
-<!--     <joint type="revolute" name="rear_differential_joint">
-      <child>rear_right_wheel</child>
-      <parent>rear_left_wheel</parent>
-      <axis>
-        <xyz>0 1 0</xyz>
-        <dynamics>
-          <damping>70</damping>
-        </dynamics>
-        <use_parent_model_frame>true</use_parent_model_frame>
-      </axis>
-      <physics>
-        <ode>
-          <erp>0</erp>
-          <cfm>1000</cfm>
-          <cfm_damping>1</cfm_damping>
-        </ode>
-      </physics>
-    </joint> -->
+    <!--     <joint type="revolute" name="rear_differential_joint">
+          <child>rear_right_wheel</child>
+          <parent>rear_left_wheel</parent>
+          <axis>
+            <xyz>0 1 0</xyz>
+            <dynamics>
+              <damping>70</damping>
+            </dynamics>
+            <use_parent_model_frame>true</use_parent_model_frame>
+          </axis>
+          <physics>
+            <ode>
+              <erp>0</erp>
+              <cfm>1000</cfm>
+              <cfm_damping>1</cfm_damping>
+            </ode>
+          </physics>
+        </joint> -->
     <plugin name='gazebo_imu_plugin' filename='libgazebo_imu_plugin.so'>
       <robotNamespace></robotNamespace>
       <linkName>rover/imu_link</linkName>
@@ -865,15 +865,15 @@
       <accelerometerTurnOnBiasSigma>0.196</accelerometerTurnOnBiasSigma>
     </plugin>
     <plugin name="gps_plugin" filename="libgazebo_gps_plugin.so">
-	<robotNamespace></robotNamespace>
-	<gpsNoise>true</gpsNoise>
+      <robotNamespace></robotNamespace>
+      <gpsNoise>true</gpsNoise>
     </plugin>
     <plugin name='mavlink_interface' filename='libgazebo_mavlink_interface.so'>
       <robotNamespace></robotNamespace>
       <imuSubTopic>/imu</imuSubTopic>
       <gpsSubTopic>/gps</gpsSubTopic>
       <mavlink_addr>INADDR_ANY</mavlink_addr>
-      <mavlink_udp_port>14560</mavlink_udp_port>
+      <mavlink_udp_port>14567</mavlink_udp_port>
       <serialEnabled>false</serialEnabled>
       <serialDevice>/dev/ttyACM0</serialDevice>
       <baudRate>921600</baudRate>

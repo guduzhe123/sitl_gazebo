@@ -2,6 +2,7 @@
 <sdf version="1.5">
   <model name="rover">
     <static>false</static>
+    <gravity>0</gravity>
     <link name="base_link">
       <inertial>
         <!-- subtracted wheel weights from dry weight of 771 kg -->

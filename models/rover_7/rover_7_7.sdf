@@ -866,7 +866,7 @@
     </plugin>
     <plugin name="gps_plugin" filename="libgazebo_gps_plugin.so">
       <robotNamespace></robotNamespace>
-      <gpsNoise>true</gpsNoise>
+      <gpsNoise>false</gpsNoise>
     </plugin>
     <plugin name='mavlink_interface' filename='libgazebo_mavlink_interface.so'>
       <robotNamespace></robotNamespace>

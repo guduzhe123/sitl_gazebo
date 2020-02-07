@@ -1,0 +1,1002 @@
+<sdf version='1.6'>
+    <model name='m950_v6_v5'>
+        <pose>0 0 0.26 0 0 3.1415927</pose>
+        <link name='base_link'>
+            <pose frame=''>0 0 0 0 -0 0</pose>
+            <!--<pose>0 0 0.26 0 0 3.1415927</pose>-->
+            <inertial>
+                <pose frame=''>0.001005 0.001 -0.05066 0 -0 0</pose>
+                <!--<pose frame=''>0.008241 -0.010 -0.01066 0 -0 0</pose>-->
+                <mass>9.35</mass>
+                <inertia>
+                    <ixx>0.38285</ixx>
+                    <ixy>-0.00024708</ixy>
+                    <ixz>-0.00099873</ixz>
+                    <iyy>0.39139</iyy>
+                    <iyz>-0.0088356</iyz>
+                    <izz>0.30493</izz>
+                </inertia>
+            </inertial>
+            <collision name='base_link_collision'>
+                <pose frame=''>0 0 0 0 -0 0</pose>
+                <geometry>
+                    <box>
+                        <size>0.67 0.67 0.915</size>
+                    </box>
+                </geometry>
+                <surface>
+                    <contact>
+                        <ode>
+                            <min_depth>0.001</min_depth>
+                            <max_vel>0</max_vel>
+                        </ode>
+                    </contact>
+                    <friction>
+                        <ode/>
+                    </friction>
+                </surface>
+            </collision>
+            <visual name='base_link_visual'>
+                <pose frame=''>0 0 0 0 -0 0</pose>
+                <geometry>
+                    <mesh>
+                        <scale>1 1 1</scale>
+                        <uri>model://m950_v6_v5/meshes/base_link.STL</uri>
+                    </mesh>
+                </geometry>
+                <material>
+                    <script>
+                        <name>Gazebo/Grey</name>
+                        <uri>file://media/materials/scripts/gazebo.material</uri>
+                    </script>
+                </material>
+            </visual>
+            <gravity>1</gravity>
+            <velocity_decay/>
+        </link>
+        <link name='propeller1_link'>
+            <pose frame=''>0.49412 0 0.075945 0.10729 0.005753 2.5331</pose>
+            <!--<pose frame=''>0.49412 0 0.075945 0.10729 0.005753 -2.5331</pose>-->
+            <inertial>
+                <pose frame=''>0.001109 0.000962 0.016803 0 -0 0</pose>
+                <mass>0.059112</mass>
+                <inertia>
+                    <ixx>0</ixx>
+                    <ixy>0</ixy>
+                    <ixz>0</ixz>
+                    <iyy>0</iyy>
+                    <iyz>0</iyz>
+                    <izz>0</izz>
+                </inertia>
+            </inertial>
+            <collision name='propeller1_link_collision'>
+                <pose frame=''>0 0 0.015 -0.15 0.08 0</pose>
+                <geometry>
+                    <cylinder>
+                        <length>0.005</length>
+                        <radius>0.24</radius>
+                    </cylinder>
+                </geometry>
+                <surface>
+                    <contact>
+                        <ode/>
+                    </contact>
+                    <friction>
+                        <ode/>
+                    </friction>
+                </surface>
+            </collision>
+            <visual name='propeller1_link_visual'>
+                <pose frame=''>0 0 0 0 -0 0</pose>
+                <geometry>
+                    <mesh>
+                        <scale>1 1 1</scale>
+                        <uri>model://m950_v6_v5/meshes/propeller1_link.STL</uri>
+                    </mesh>
+                </geometry>
+                <material>
+                    <script>
+                        <name>Gazebo/Black</name>
+                        <uri>file://media/materials/scripts/gazebo.material</uri>
+                    </script>
+                </material>
+            </visual>
+            <gravity>1</gravity>
+            <velocity_decay/>
+        </link>
+        <joint name='propeller1_joint' type='revolute'>
+            <child>propeller1_link</child>
+            <parent>base_link</parent>
+            <axis>
+                <!--<xyz>-0.087157 6e-06 0.99619</xyz>-->
+                <xyz>0.046 0.0827 1.8977</xyz>
+                <limit>
+                    <lower>0</lower>
+                    <upper>0</upper>
+                    <effort>0</effort>
+                    <velocity>0</velocity>
+                </limit>
+                <dynamics>
+                    <spring_reference>0</spring_reference>
+                    <spring_stiffness>0</spring_stiffness>
+                </dynamics>
+                <use_parent_model_frame>1</use_parent_model_frame>
+            </axis>
+        </joint>
+        <link name='propeller2_link'>
+            <pose frame=''>-0.49777 0 0.034181 0.096677 0.012082 0.46711</pose>
+            <inertial>
+                <pose frame=''>0.003865 0.003359 0.058568 0 -0 0</pose>
+                <mass>0.059107</mass>
+                <inertia>
+                    <ixx>0</ixx>
+                    <ixy>0</ixy>
+                    <ixz>0</ixz>
+                    <iyy>0</iyy>
+                    <iyz>0</iyz>
+                    <izz>0</izz>
+                </inertia>
+            </inertial>
+            <collision name='propeller2_link_collision'>
+                <pose frame=''>0 0 0.051 -0.1 0.05 0</pose>
+                <geometry>
+                    <cylinder>
+                        <length>0.005</length>
+                        <radius>0.24</radius>
+                    </cylinder>
+                </geometry>
+                <surface>
+                    <contact>
+                        <ode/>
+                    </contact>
+                    <friction>
+                        <ode/>
+                    </friction>
+                </surface>
+            </collision>
+            <visual name='propeller2_link_visual'>
+                <pose frame=''>0 0 0 0 -0 0</pose>
+                <geometry>
+                    <mesh>
+                        <scale>1 1 1</scale>
+                        <uri>model://m950_v6_v5/meshes/propeller2_link.STL</uri>
+                    </mesh>
+                </geometry>
+                <material>
+                    <script>
+                        <name>Gazebo/Black</name>
+                        <uri>file://media/materials/scripts/gazebo.material</uri>
+                    </script>
+                </material>
+            </visual>
+            <gravity>1</gravity>
+            <velocity_decay/>
+        </link>
+        <joint name='propeller2_joint' type='revolute'>
+            <child>propeller2_link</child>
+            <parent>base_link</parent>
+            <axis>
+                <!--<xyz>0.087155 -0 0.99619</xyz>-->
+                <xyz>0.0486 0.0811 1.8976</xyz>
+
+                <limit>
+                    <lower>0</lower>
+                    <upper>0</upper>
+                    <effort>0</effort>
+                    <velocity>0</velocity>
+                </limit>
+                <dynamics>
+                    <spring_reference>0</spring_reference>
+                    <spring_stiffness>0</spring_stiffness>
+                </dynamics>
+                <use_parent_model_frame>1</use_parent_model_frame>
+            </axis>
+        </joint>
+        <link name='propeller3_link'>
+            <pose frame=''>-0.24933 0.43185 0.024103 0.13681 -0.029569 0.093499</pose>
+            <inertial>
+                <pose frame=''>0.004529 0.003939 0.068645 0 -0 0</pose>
+                <mass>0.059107</mass>
+                <inertia>
+                    <ixx>0</ixx>
+                    <ixy>0</ixy>
+                    <ixz>0</ixz>
+                    <iyy>0</iyy>
+                    <iyz>0</iyz>
+                    <izz>0</izz>
+                </inertia>
+            </inertial>
+            <collision name='propeller3_link_collision'>
+                <pose frame=''>0 0 0.07 -0.1 -0 0</pose>
+                <geometry>
+                    <cylinder>
+                        <length>0.005</length>
+                        <radius>0.24</radius>
+                    </cylinder>
+                </geometry>
+                <surface>
+                    <contact>
+                        <ode/>
+                    </contact>
+                    <friction>
+                        <ode/>
+                    </friction>
+                </surface>
+            </collision>
+            <visual name='propeller3_link_visual'>
+                <pose frame=''>0 0 0 0 -0 0</pose>
+                <geometry>
+                    <mesh>
+                        <scale>1 1 1</scale>
+                        <uri>model://m950_v6_v5/meshes/propeller3_link.STL</uri>
+                    </mesh>
+                </geometry>
+                <material>
+                    <script>
+                        <name>Gazebo/Red</name>
+                        <uri>file://media/materials/scripts/gazebo.material</uri>
+                    </script>
+                </material>
+            </visual>
+            <gravity>1</gravity>
+            <velocity_decay/>
+        </link>
+        <joint name='propeller3_joint' type='revolute'>
+            <child>propeller3_link</child>
+            <parent>base_link</parent>
+            <axis>
+                <xyz>0.043578 -0.07548 0.99619</xyz>
+                <limit>
+                    <lower>0</lower>
+                    <upper>0</upper>
+                    <effort>0</effort>
+                    <velocity>0</velocity>
+                </limit>
+                <dynamics>
+                    <spring_reference>0</spring_reference>
+                    <spring_stiffness>0</spring_stiffness>
+                </dynamics>
+                <use_parent_model_frame>1</use_parent_model_frame>
+            </axis>
+        </joint>
+        <link name='propeller4_link'>
+            <pose frame=''>0.248361 -0.425376 0.0755 3.11418 0.044502 0.274574</pose>
+            <inertial>
+                <pose frame=''>-0.000516 -0.000447 -0.007809 0 -0 0</pose>
+                <mass>0.059108</mass>
+                <inertia>
+                    <ixx>0</ixx>
+                    <ixy>0</ixy>
+                    <ixz>0</ixz>
+                    <iyy>0</iyy>
+                    <iyz>0</iyz>
+                    <izz>0</izz>
+                </inertia>
+            </inertial>
+            <collision name='propeller4_link_collision'>
+                <pose frame=''>0 0 -0.018 -0.01 -0 0</pose>
+                <geometry>
+                    <cylinder>
+                        <length>0.005</length>
+                        <radius>0.24</radius>
+                    </cylinder>
+                </geometry>
+                <surface>
+                    <contact>
+                        <ode/>
+                    </contact>
+                    <friction>
+                        <ode/>
+                    </friction>
+                </surface>
+            </collision>
+            <visual name='propeller4_link_visual'>
+                <pose frame=''>0 0 0 0 -0 0</pose>
+                <geometry>
+                    <mesh>
+                        <scale>1 1 1</scale>
+                        <uri>model://m950_v6_v5/meshes/propeller6_link.STL</uri>
+                    </mesh>
+                </geometry>
+                <material>
+                    <script>
+                        <name>Gazebo/Black</name>
+                        <uri>file://media/materials/scripts/gazebo.material</uri>
+                    </script>
+                </material>
+            </visual>
+            <gravity>1</gravity>
+            <velocity_decay/>
+        </link>
+        <joint name='propeller4_joint' type='revolute'>
+            <child>propeller4_link</child>
+            <parent>base_link</parent>
+            <axis>
+                <xyz>-0.043578 0.075479 0.99619</xyz>
+                <limit>
+                    <lower>0</lower>
+                    <upper>0</upper>
+                    <effort>0</effort>
+                    <velocity>0</velocity>
+                </limit>
+                <dynamics>
+                    <spring_reference>0</spring_reference>
+                    <spring_stiffness>0</spring_stiffness>
+                </dynamics>
+                <use_parent_model_frame>1</use_parent_model_frame>
+            </axis>
+        </joint>
+        <link name='propeller5_link'>
+            <pose frame=''>0.24845 0.43034 0.044031 -0.02824 -0.084094 2.4104</pose>
+            <inertial>
+                <pose frame=''>0.003216 0.002795 0.048717 0 -0 0</pose>
+                <mass>0.059108</mass>
+                <inertia>
+                    <ixx>0</ixx>
+                    <ixy>0</ixy>
+                    <ixz>0</ixz>
+                    <iyy>0</iyy>
+                    <iyz>0</iyz>
+                    <izz>0</izz>
+                </inertia>
+            </inertial>
+            <collision name='propeller5_link_collision'>
+                <pose frame=''>0 0 0.051 0.02 0.12 0</pose>
+                <geometry>
+                    <cylinder>
+                        <length>0.005</length>
+                        <radius>0.24</radius>
+                    </cylinder>
+                </geometry>
+                <surface>
+                    <contact>
+                        <ode/>
+                    </contact>
+                    <friction>
+                        <ode/>
+                    </friction>
+                </surface>
+            </collision>
+            <visual name='propeller5_link_visual'>
+                <pose frame=''>0 0 0 0 -0 0</pose>
+                <geometry>
+                    <mesh>
+                        <scale>1 1 1</scale>
+                        <uri>model://m950_v6_v5/meshes/propeller5_link.STL</uri>
+                    </mesh>
+                </geometry>
+                <material>
+                    <script>
+                        <name>Gazebo/Red</name>
+                        <uri>file://media/materials/scripts/gazebo.material</uri>
+                    </script>
+                </material>
+            </visual>
+            <gravity>1</gravity>
+            <velocity_decay/>
+        </link>
+        <joint name='propeller5_joint' type='revolute'>
+            <child>propeller5_link</child>
+            <parent>base_link</parent>
+            <axis>
+                <xyz>-0.04358 -0.075478 0.99619</xyz>
+                <limit>
+                    <lower>0</lower>
+                    <upper>0</upper>
+                    <effort>0</effort>
+                    <velocity>0</velocity>
+                </limit>
+                <dynamics>
+                    <spring_reference>0</spring_reference>
+                    <spring_stiffness>0</spring_stiffness>
+                </dynamics>
+                <use_parent_model_frame>1</use_parent_model_frame>
+            </axis>
+        </joint>
+        <link name='propeller6_link'>
+            <pose frame=''>-0.24823 -0.42995 0.049081 3.12 0.10364 -0.079043</pose>
+            <inertial>
+                <pose frame=''>-0.002622 0.001988 -0.017764 0 -0 0</pose>
+                <mass>0.059108</mass>
+                <inertia>
+                    <ixx>0</ixx>
+                    <ixy>0</ixy>
+                    <ixz>0</ixz>
+                    <iyy>0</iyy>
+                    <iyz>0</iyz>
+                    <izz>0</izz>
+                </inertia>
+            </inertial>
+            <collision name='propeller6_link_collision'>
+                <pose frame=''>0 0 -0.025 0.0 0.1 0</pose>
+                <geometry>
+                    <cylinder>
+                        <length>0.005</length>
+                        <radius>0.24</radius>
+                    </cylinder>
+                </geometry>
+                <surface>
+                    <contact>
+                        <ode/>
+                    </contact>
+                    <friction>
+                        <ode/>
+                    </friction>
+                </surface>
+            </collision>
+            <visual name='propeller6_link_visual'>
+                <pose frame=''>0 0 0 0 -0 0</pose>
+                <geometry>
+                    <mesh>
+                        <scale>1 1 1</scale>
+                        <uri>model://m950_v6_v5/meshes/propeller6_link.STL</uri>
+                    </mesh>
+                </geometry>
+                <material>
+                    <script>
+                        <name>Gazebo/Black</name>
+                        <uri>file://media/materials/scripts/gazebo.material</uri>
+                    </script>
+                </material>
+            </visual>
+            <gravity>1</gravity>
+            <velocity_decay/>
+        </link>
+        <joint name='propeller6_joint' type='revolute'>
+            <child>propeller6_link</child>
+            <parent>base_link</parent>
+            <axis>
+                <xyz>0.04358 0.075469 0.996191</xyz>
+                <limit>
+                    <lower>0</lower>
+                    <upper>0</upper>
+                    <effort>0</effort>
+                    <velocity>0</velocity>
+                </limit>
+                <dynamics>
+                    <spring_reference>0</spring_reference>
+                    <spring_stiffness>0</spring_stiffness>
+                </dynamics>
+                <use_parent_model_frame>1</use_parent_model_frame>
+            </axis>
+        </joint>
+
+<!--        <link name='rotor_3'>
+            <pose frame=''>0.211396 0.119762 0.082219 0 0 0</pose>
+            <inertial>
+                <pose frame=''>0 0 0 0 -0 0</pose>
+                <mass>0.005</mass>
+                <inertia>
+                    <ixx>9.75e-07</ixx>
+                    <ixy>0</ixy>
+                    <ixz>0</ixz>
+                    <iyy>0.000273104</iyy>
+                    <iyz>0</iyz>
+                    <izz>0.000274004</izz>
+                </inertia>
+            </inertial>
+            <collision name='rotor_3_collision'>
+                <pose frame=''>0 0 0 0 -0 0</pose>
+                <geometry>
+                    <cylinder>
+                        <length>0.005</length>
+                        <radius>0.128</radius>
+                    </cylinder>
+                </geometry>
+                <surface>
+                    <contact>
+                        <ode/>
+                    </contact>
+                    <friction>
+                        <ode/>
+                    </friction>
+                </surface>
+            </collision>
+            <visual name='rotor_3_visual'>
+                <pose frame=''>-0.211396 -0.119762 -0.082219 0 0 0</pose>
+                <geometry>
+                    <mesh>
+                        <scale>0.001 0.001 0.001</scale>
+                        <uri>model://typhoon_h480/meshes/prop_ccw_assembly_remeshed_v3.stl</uri>
+                    </mesh>
+                </geometry>
+                <material>
+                    <script>
+                        <name>Gazebo/Blue</name>
+                        <uri>file://media/materials/scripts/gazebo.material</uri>
+                    </script>
+                </material>
+            </visual>
+            <gravity>1</gravity>
+            <velocity_decay/>
+            <self_collide>0</self_collide>
+        </link>
+        <joint name='rotor_3_joint' type='revolute'>
+            <child>rotor_3</child>
+            <parent>base_link</parent>
+            <axis>
+                <xyz>0.0446 -0.0825 1.8977</xyz>
+                <limit>
+                    <lower>-1e+16</lower>
+                    <upper>1e+16</upper>
+                    <effort>10</effort>
+                    <velocity>-1</velocity>
+                </limit>
+                <dynamics>
+                    <damping>0.005</damping>
+                </dynamics>
+                <use_parent_model_frame>1</use_parent_model_frame>
+            </axis>
+            <physics>
+                <ode>
+                    <implicit_spring_damper>1</implicit_spring_damper>
+                </ode>
+            </physics>
+        </joint>-->
+
+        <link name='imu_link'>
+            <pose frame=''>0 0 0 0 0 3.1415927</pose>
+            <inertial>
+                <pose frame=''>0 0 0 0 -0 0</pose>
+                <mass>0.015</mass>
+                <inertia>
+                    <ixx>1e-05</ixx>
+                    <ixy>0</ixy>
+                    <ixz>0</ixz>
+                    <iyy>1e-05</iyy>
+                    <iyz>0</iyz>
+                    <izz>1e-05</izz>
+                </inertia>
+            </inertial>
+        </link>
+        <joint name='imu_joint' type='revolute'>
+            <child>imu_link</child>
+            <parent>base_link</parent>
+            <axis>
+                <xyz>1 0 0</xyz>
+                <limit>
+                    <lower>0</lower>
+                    <upper>0</upper>
+                    <effort>0</effort>
+                    <velocity>0</velocity>
+                </limit>
+                <dynamics>
+                    <spring_reference>0</spring_reference>
+                    <spring_stiffness>0</spring_stiffness>
+                </dynamics>
+                <use_parent_model_frame>1</use_parent_model_frame>
+            </axis>
+        </joint>
+
+        <plugin name='rosbag' filename='librotors_gazebo_multirotor_base_plugin.so'>
+            <robotNamespace></robotNamespace>
+            <linkName>base_link</linkName>
+            <rotorVelocitySlowdownSim>10</rotorVelocitySlowdownSim>
+        </plugin>
+        <plugin name='front_right_motor_model' filename='librotors_gazebo_motor_model.so'>
+            <robotNamespace></robotNamespace>
+            <jointName>propeller1_joint</jointName>
+            <linkName>propeller1_link</linkName>
+            <turningDirection>ccw</turningDirection>
+            <timeConstantUp>0.0125</timeConstantUp>
+            <timeConstantDown>0.025</timeConstantDown>
+            <maxRotVelocity>1500</maxRotVelocity>
+            <motorConstant>8.54858e-06</motorConstant>
+            <momentConstant>0.06</momentConstant>
+            <commandSubTopic>/gazebo/command/motor_speed</commandSubTopic>
+            <motorNumber>4</motorNumber>
+            <rotorDragCoefficient>0.000806428</rotorDragCoefficient>
+            <rollingMomentCoefficient>1e-06</rollingMomentCoefficient>
+            <motorSpeedPubTopic>/motor_speed/4</motorSpeedPubTopic>
+            <rotorVelocitySlowdownSim>10</rotorVelocitySlowdownSim>
+<!--            <joint_control_pid>
+              <p>0.1</p>
+              <i>0</i>
+              <d>0</d>
+              <iMax>0</iMax>
+              <iMin>0</iMin>
+              <cmdMax>3</cmdMax>
+              <cmdMin>-3</cmdMin>
+            </joint_control_pid>-->
+        </plugin>
+        <plugin name='back_left_motor_model' filename='librotors_gazebo_motor_model.so'>
+            <robotNamespace></robotNamespace>
+            <jointName>propeller1_joint</jointName>
+            <linkName>propeller1_link</linkName>
+            <turningDirection>cw</turningDirection>
+            <timeConstantUp>0.0125</timeConstantUp>
+            <timeConstantDown>0.025</timeConstantDown>
+            <maxRotVelocity>1500</maxRotVelocity>
+            <motorConstant>8.54858e-06</motorConstant>
+            <momentConstant>0.06</momentConstant>
+            <commandSubTopic>/gazebo/command/motor_speed</commandSubTopic>
+            <motorNumber>1</motorNumber>
+            <rotorDragCoefficient>0.000806428</rotorDragCoefficient>
+            <rollingMomentCoefficient>1e-06</rollingMomentCoefficient>
+            <motorSpeedPubTopic>/motor_speed/1</motorSpeedPubTopic>
+            <rotorVelocitySlowdownSim>10</rotorVelocitySlowdownSim>
+<!--            <joint_control_pid>
+              <p>0.1</p>
+              <i>0</i>
+              <d>0</d>
+              <iMax>0</iMax>
+              <iMin>0</iMin>
+              <cmdMax>3</cmdMax>
+              <cmdMin>-3</cmdMin>
+            </joint_control_pid>-->
+        </plugin>
+
+<!--        <plugin name='back_right_motor_model' filename='librotors_gazebo_motor_model.so'>
+            <robotNamespace></robotNamespace>
+            <jointName>propeller1_joint</jointName>
+            <linkName>propeller1_link</linkName>
+            <turningDirection>cw</turningDirection>
+            <timeConstantUp>0.0125</timeConstantUp>
+            <timeConstantDown>0.025</timeConstantDown>
+            <maxRotVelocity>1500</maxRotVelocity>
+            <motorConstant>8.54858e-06</motorConstant>
+            <momentConstant>0.06</momentConstant>
+            <commandSubTopic>/gazebo/command/motor_speed</commandSubTopic>
+            <motorNumber>1</motorNumber>
+            <rotorDragCoefficient>0.000806428</rotorDragCoefficient>
+            <rollingMomentCoefficient>1e-06</rollingMomentCoefficient>
+            <motorSpeedPubTopic>/motor_speed/1</motorSpeedPubTopic>
+            <rotorVelocitySlowdownSim>10</rotorVelocitySlowdownSim>
+            &lt;!&ndash;            <joint_control_pid>
+                          <p>0.1</p>
+                          <i>0</i>
+                          <d>0</d>
+                          <iMax>0</iMax>
+                          <iMin>0</iMin>
+                          <cmdMax>3</cmdMax>
+                          <cmdMin>-3</cmdMin>
+                        </joint_control_pid>&ndash;&gt;
+        </plugin>
+        <plugin name='back_right_motor_model' filename='librotors_gazebo_motor_model.so'>
+            <robotNamespace></robotNamespace>
+            <jointName>propeller1_joint</jointName>
+            <linkName>propeller1_link</linkName>
+            <turningDirection>ccw</turningDirection>
+            <timeConstantUp>0.0125</timeConstantUp>
+            <timeConstantDown>0.025</timeConstantDown>
+            <maxRotVelocity>1500</maxRotVelocity>
+            <motorConstant>8.54858e-06</motorConstant>
+            <momentConstant>0.06</momentConstant>
+            <commandSubTopic>/gazebo/command/motor_speed</commandSubTopic>
+            <motorNumber>2</motorNumber>
+            <rotorDragCoefficient>0.000806428</rotorDragCoefficient>
+            <rollingMomentCoefficient>1e-06</rollingMomentCoefficient>
+            <motorSpeedPubTopic>/motor_speed/5</motorSpeedPubTopic>
+            <rotorVelocitySlowdownSim>10</rotorVelocitySlowdownSim>
+            &lt;!&ndash;            <joint_control_pid>
+                          <p>0.1</p>
+                          <i>0</i>
+                          <d>0</d>
+                          <iMax>0</iMax>
+                          <iMin>0</iMin>
+                          <cmdMax>3</cmdMax>
+                          <cmdMin>-3</cmdMin>
+                        </joint_control_pid>&ndash;&gt;
+        </plugin>-->
+        <!--<plugin name='front_left_motor_model' filename='librotors_gazebo_motor_model.so'>-->
+            <!--<robotNamespace></robotNamespace>-->
+            <!--<jointName>propeller3_joint</jointName>-->
+            <!--<linkName>propeller3_link</linkName>-->
+            <!--<turningDirection>cw</turningDirection>-->
+            <!--<timeConstantUp>0.0125</timeConstantUp>-->
+            <!--<timeConstantDown>0.025</timeConstantDown>-->
+            <!--<maxRotVelocity>1500</maxRotVelocity>-->
+            <!--<motorConstant>8.54858e-06</motorConstant>-->
+            <!--<momentConstant>0.06</momentConstant>-->
+            <!--<commandSubTopic>/gazebo/command/motor_speed</commandSubTopic>-->
+            <!--<motorNumber>2</motorNumber>-->
+            <!--<rotorDragCoefficient>0.000806428</rotorDragCoefficient>-->
+            <!--<rollingMomentCoefficient>1e-06</rollingMomentCoefficient>-->
+            <!--<motorSpeedPubTopic>/motor_speed/2</motorSpeedPubTopic>-->
+            <!--<rotorVelocitySlowdownSim>10</rotorVelocitySlowdownSim>-->
+            <!--&lt;!&ndash;-->
+            <!--<joint_control_pid>-->
+              <!--<p>0.1</p>-->
+              <!--<i>0</i>-->
+              <!--<d>0</d>-->
+              <!--<iMax>0</iMax>-->
+              <!--<iMin>0</iMin>-->
+              <!--<cmdMax>3</cmdMax>-->
+              <!--<cmdMin>-3</cmdMin>-->
+            <!--</joint_control_pid>-->
+            <!--&ndash;&gt;-->
+        <!--</plugin>-->
+        <!--<plugin name='back_right_motor_model' filename='librotors_gazebo_motor_model.so'>
+            <robotNamespace></robotNamespace>
+            <jointName>propeller4_joint</jointName>
+            <linkName>propeller4_link</linkName>
+            <turningDirection>ccw</turningDirection>
+            <timeConstantUp>0.0125</timeConstantUp>
+            <timeConstantDown>0.025</timeConstantDown>
+            <maxRotVelocity>1500</maxRotVelocity>
+            <motorConstant>8.54858e-06</motorConstant>
+            <momentConstant>0.06</momentConstant>
+            <commandSubTopic>/gazebo/command/motor_speed</commandSubTopic>
+            <motorNumber>3</motorNumber>
+            <rotorDragCoefficient>0.000806428</rotorDragCoefficient>
+            <rollingMomentCoefficient>1e-06</rollingMomentCoefficient>
+            <motorSpeedPubTopic>/motor_speed/3</motorSpeedPubTopic>
+            <rotorVelocitySlowdownSim>10</rotorVelocitySlowdownSim>
+            &lt;!&ndash;
+            <joint_control_pid>
+              <p>0.1</p>
+              <i>0</i>
+              <d>0</d>
+              <iMax>0</iMax>
+              <iMin>0</iMin>
+              <cmdMax>3</cmdMax>
+              <cmdMin>-3</cmdMin>
+            </joint_control_pid>
+            &ndash;&gt;
+        </plugin>-->
+ <!--       <plugin name='back_left_motor_model' filename='librotors_gazebo_motor_model.so'>
+            <robotNamespace></robotNamespace>
+            <jointName>propeller5_joint</jointName>
+            <linkName>propeller5_link</linkName>
+            <turningDirection>cw</turningDirection>
+            <timeConstantUp>0.0125</timeConstantUp>
+            <timeConstantDown>0.025</timeConstantDown>
+            <maxRotVelocity>1500</maxRotVelocity>
+            <motorConstant>8.54858e-06</motorConstant>
+            <momentConstant>0.06</momentConstant>
+            <commandSubTopic>/gazebo/command/motor_speed</commandSubTopic>
+            <motorNumber>0</motorNumber>
+            <rotorDragCoefficient>0.000806428</rotorDragCoefficient>
+            <rollingMomentCoefficient>1e-06</rollingMomentCoefficient>
+            <motorSpeedPubTopic>/motor_speed/0</motorSpeedPubTopic>
+            <rotorVelocitySlowdownSim>10</rotorVelocitySlowdownSim>
+            &lt;!&ndash;
+            <joint_control_pid>
+              <p>0.1</p>
+              <i>0</i>
+              <d>0</d>
+              <iMax>0</iMax>
+              <iMin>0</iMin>
+              <cmdMax>3</cmdMax>
+              <cmdMin>-3</cmdMin>
+            </joint_control_pid>
+            &ndash;&gt;
+        </plugin>-->
+        <!--<plugin name='front_left_motor_model' filename='librotors_gazebo_motor_model.so'>-->
+            <!--<robotNamespace></robotNamespace>-->
+            <!--<jointName>propeller6_joint</jointName>-->
+            <!--<linkName>propeller6_link</linkName>-->
+            <!--<turningDirection>ccw</turningDirection>-->
+            <!--<timeConstantUp>0.0125</timeConstantUp>-->
+            <!--<timeConstantDown>0.025</timeConstantDown>-->
+            <!--<maxRotVelocity>1500</maxRotVelocity>-->
+            <!--<motorConstant>8.54858e-06</motorConstant>-->
+            <!--<momentConstant>0.06</momentConstant>-->
+            <!--<commandSubTopic>/gazebo/command/motor_speed</commandSubTopic>-->
+            <!--<motorNumber>1</motorNumber>-->
+            <!--<rotorDragCoefficient>0.000806428</rotorDragCoefficient>-->
+            <!--<rollingMomentCoefficient>1e-06</rollingMomentCoefficient>-->
+            <!--<motorSpeedPubTopic>/motor_speed/1</motorSpeedPubTopic>-->
+            <!--<rotorVelocitySlowdownSim>10</rotorVelocitySlowdownSim>-->
+            <!--&lt;!&ndash;-->
+            <!--<joint_control_pid>-->
+              <!--<p>0.1</p>-->
+              <!--<i>0</i>-->
+              <!--<d>0</d>-->
+              <!--<iMax>0</iMax>-->
+              <!--<iMin>0</iMin>-->
+              <!--<cmdMax>3</cmdMax>-->
+              <!--<cmdMin>-3</cmdMin>-->
+            <!--</joint_control_pid>-->
+            <!--&ndash;&gt;-->
+        <!--</plugin>-->
+        <plugin name='mavlink_interface' filename='librotors_gazebo_mavlink_interface.so'>
+            <robotNamespace></robotNamespace>
+            <imuSubTopic>/imu</imuSubTopic>
+            <motorSpeedCommandPubTopic>/gazebo/command/motor_speed</motorSpeedCommandPubTopic>
+
+            <control_channels>
+                <channel name="rotor0">
+                    <input_index>1</input_index>
+                    <input_offset>0</input_offset>
+                    <input_scaling>1500</input_scaling>
+                    <zero_position_disarmed>0</zero_position_disarmed>
+                    <zero_position_armed>100</zero_position_armed>
+                    <joint_control_type>velocity</joint_control_type>
+                    <!-- gazebo_motor_model has the joint_control_pid active in this model
+                    <joint_control_pid>
+                      <p>0.1</p>
+                      <i>0</i>
+                      <d>0</d>
+                      <iMax>0</iMax>
+                      <iMin>0</iMin>
+                      <cmdMax>3</cmdMax>
+                      <cmdMin>-3</cmdMin>
+                    </joint_control_pid>
+                    -->
+                    <joint_name>propeller1_joint</joint_name>
+                </channel>
+               <!-- <channel name="rotor1">
+                    <input_index>1</input_index>
+                    <input_offset>0</input_offset>
+                    <input_scaling>1500</input_scaling>
+                    <zero_position_disarmed>0</zero_position_disarmed>
+                    <zero_position_armed>100</zero_position_armed>
+                    <joint_control_type>velocity</joint_control_type>
+                    &lt;!&ndash; gazebo_motor_model has the joint_control_pid active in this model
+                    <joint_control_pid>
+                      <p>0.1</p>
+                      <i>0</i>
+                      <d>0</d>
+                      <iMax>0</iMax>
+                      <iMin>0</iMin>
+                      <cmdMax>3</cmdMax>
+                      <cmdMin>-3</cmdMin>
+                    </joint_control_pid>
+                    &ndash;&gt;
+                    <joint_name>propeller1_joint</joint_name>
+                </channel>
+                <channel name="rotor2">
+                    <input_index>2</input_index>
+                    <input_offset>0</input_offset>
+                    <input_scaling>1500</input_scaling>
+                    <zero_position_disarmed>0</zero_position_disarmed>
+                    <zero_position_armed>100</zero_position_armed>
+                    <joint_control_type>velocity</joint_control_type>
+                    &lt;!&ndash; gazebo_motor_model has the joint_control_pid active in this model
+                    <joint_control_pid>
+                      <p>0.1</p>
+                      <i>0</i>
+                      <d>0</d>
+                      <iMax>0</iMax>
+                      <iMin>0</iMin>
+                      <cmdMax>3</cmdMax>
+                      <cmdMin>-3</cmdMin>
+                    </joint_control_pid>
+                    &ndash;&gt;
+                    <joint_name>propeller1_joint</joint_name>
+                </channel>-->
+                <!--<channel name="rotor3">
+                    <input_index>3</input_index>
+                    <input_offset>0</input_offset>
+                    <input_scaling>1500</input_scaling>
+                    <zero_position_disarmed>0</zero_position_disarmed>
+                    <zero_position_armed>100</zero_position_armed>
+                    <joint_control_type>velocity</joint_control_type>
+                    &lt;!&ndash; gazebo_motor_model has the joint_control_pid active in this model
+                    <joint_control_pid>
+                      <p>0.1</p>
+                      <i>0</i>
+                      <d>0</d>
+                      <iMax>0</iMax>
+                      <iMin>0</iMin>
+                      <cmdMax>3</cmdMax>
+                      <cmdMin>-3</cmdMin>
+                    </joint_control_pid>
+                    &ndash;&gt;
+                    <joint_name>propeller1_joint</joint_name>
+                </channel>-->
+               <!-- <channel name="rotor4">
+                    <input_index>4</input_index>
+                    <input_offset>0</input_offset>
+                    <input_scaling>1500</input_scaling>
+                    <zero_position_disarmed>0</zero_position_disarmed>
+                    <zero_position_armed>100</zero_position_armed>
+                    <joint_control_type>velocity</joint_control_type>
+                    &lt;!&ndash; gazebo_motor_model has the joint_control_pid active in this model
+                    <joint_control_pid>
+                      <p>0.1</p>
+                      <i>0</i>
+                      <d>0</d>
+                      <iMax>0</iMax>
+                      <iMin>0</iMin>
+                      <cmdMax>3</cmdMax>
+                      <cmdMin>-3</cmdMin>
+                    </joint_control_pid>
+                    &ndash;&gt;
+                    <joint_name>propeller1_joint</joint_name>
+                </channel>-->
+               <!-- <channel name="rotor5">
+                    <input_index>5</input_index>
+                    <input_offset>0</input_offset>
+                    <input_scaling>1500</input_scaling>
+                    <zero_position_disarmed>0</zero_position_disarmed>
+                    <zero_position_armed>100</zero_position_armed>
+                    <joint_control_type>velocity</joint_control_type>
+                    &lt;!&ndash; gazebo_motor_model has the joint_control_pid active in this model
+                    <joint_control_pid>
+                      <p>0.1</p>
+                      <i>0</i>
+                      <d>0</d>
+                      <iMax>0</iMax>
+                      <iMin>0</iMin>
+                      <cmdMax>3</cmdMax>
+                      <cmdMin>-3</cmdMin>
+                    </joint_control_pid>
+                    &ndash;&gt;
+                    <joint_name>propeller1_joint</joint_name>
+                </channel>-->
+<!--                <channel name="gimbal_roll">
+                    <input_index>6</input_index>
+                    <input_offset>0</input_offset>
+                    <input_scaling>-3.1415</input_scaling>
+                    <zero_position_disarmed>0</zero_position_disarmed>
+                    <zero_position_armed>0</zero_position_armed>
+                    <joint_control_type>position_gztopic</joint_control_type>
+                    <gztopic>/gimbal_roll_cmd</gztopic>
+                    <joint_name>typhoon_h480::cgo3_camera_joint</joint_name>
+                </channel>
+                <channel name="gimbal_pitch">
+                    <input_index>7</input_index>
+                    <input_offset>0</input_offset>
+                    <input_scaling>3.1415</input_scaling>
+                    <zero_position_disarmed>0</zero_position_disarmed>
+                    <zero_position_armed>0</zero_position_armed>
+                    <joint_control_type>position_gztopic</joint_control_type>
+                    <gztopic>/gimbal_pitch_cmd</gztopic>
+                    <joint_name>typhoon_h480::cgo3_camera_joint</joint_name>
+                </channel>
+                <channel name="gimbal_yaw">
+                    <input_index>8</input_index>
+                    <input_offset>0</input_offset>
+                    <input_scaling>-3.1415</input_scaling>
+                    <zero_position_disarmed>0</zero_position_disarmed>
+                    <zero_position_armed>0</zero_position_armed>
+                    <joint_control_type>position_gztopic</joint_control_type>
+                    <gztopic>/gimbal_yaw_cmd</gztopic>
+                    <joint_name>typhoon_h480::cgo3_vertical_arm_joint</joint_name>
+                </channel>
+                <channel name="left_leg">
+                    <input_index>9</input_index>
+                    <input_offset>1</input_offset>
+                    <input_scaling>0.5</input_scaling>
+                    <zero_position_disarmed>0</zero_position_disarmed>
+                    <zero_position_armed>0</zero_position_armed>
+                    <joint_control_type>position</joint_control_type>
+                    <joint_control_pid>
+                        <p>3.5</p>
+                        <i>0.5</i>
+                        <d>0</d>
+                        <iMax>4</iMax>
+                        <iMin>-4</iMin>
+                        <cmdMax>6</cmdMax>
+                        <cmdMin>-6</cmdMin>
+                    </joint_control_pid>
+                    <joint_name>left_leg_joint</joint_name>
+                </channel>
+                <channel name="right_leg">
+                    <input_index>10</input_index>
+                    <input_offset>1</input_offset>
+                    <input_scaling>0.5</input_scaling>
+                    <zero_position_disarmed>0</zero_position_disarmed>
+                    <zero_position_armed>0</zero_position_armed>
+                    <joint_control_type>position</joint_control_type>
+                    <joint_control_pid>
+                        <p>3.5</p>
+                        <i>0.5</i>
+                        <d>0</d>
+                        <iMax>4</iMax>
+                        <iMin>-4</iMin>
+                        <cmdMax>6</cmdMax>
+                        <cmdMin>-6</cmdMin>
+                    </joint_control_pid>
+                    <joint_name>right_leg_joint</joint_name>
+                </channel>-->
+            </control_channels>
+        </plugin>
+        <static>0</static>
+        <plugin name='rotors_gazebo_imu_plugin' filename='librotors_gazebo_imu_plugin.so'>
+            <robotNamespace></robotNamespace>
+            <linkName>imu_link</linkName>
+            <imuTopic>/imu</imuTopic>
+            <gyroscopeNoiseDensity>0.0003394</gyroscopeNoiseDensity>
+            <gyroscopeRandomWalk>3.8785e-05</gyroscopeRandomWalk>
+            <gyroscopeBiasCorrelationTime>1000.0</gyroscopeBiasCorrelationTime>
+            <gyroscopeTurnOnBiasSigma>0.0087</gyroscopeTurnOnBiasSigma>
+            <accelerometerNoiseDensity>0.004</accelerometerNoiseDensity>
+            <accelerometerRandomWalk>0.006</accelerometerRandomWalk>
+            <accelerometerBiasCorrelationTime>300.0</accelerometerBiasCorrelationTime>
+            <accelerometerTurnOnBiasSigma>0.196</accelerometerTurnOnBiasSigma>
+        </plugin>
+    </model>
+</sdf>

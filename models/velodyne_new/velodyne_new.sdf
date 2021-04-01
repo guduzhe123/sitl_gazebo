@@ -79,7 +79,7 @@
           </noise>
         </ray>
         <plugin name='gazebo_ros_laser_controller' filename='libgazebo_ros_velodyne_gpu_laser.so'>
-          <topicName>/os_cloud_node/points</topicName>
+          <topicName>/usv1/os_cloud_node/points</topicName>
           <frameName>map</frameName>
           <min_range>2.0</min_range>
           <max_range>100.0</max_range>
